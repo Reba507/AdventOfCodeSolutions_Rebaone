@@ -1,0 +1,14 @@
+C:\Users\Rebaone97898\source\repos\Day3P1\bin\Debug\net8.0\Day3P1.exe
+C:\Users\Rebaone97898\source\repos\Day3P1\bin\Debug\net8.0\Day3P1.deps.json
+C:\Users\Rebaone97898\source\repos\Day3P1\bin\Debug\net8.0\Day3P1.runtimeconfig.json
+C:\Users\Rebaone97898\source\repos\Day3P1\bin\Debug\net8.0\Day3P1.dll
+C:\Users\Rebaone97898\source\repos\Day3P1\bin\Debug\net8.0\Day3P1.pdb
+C:\Users\Rebaone97898\source\repos\Day3P1\obj\Debug\net8.0\Day3P1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rebaone97898\source\repos\Day3P1\obj\Debug\net8.0\Day3P1.AssemblyInfoInputs.cache
+C:\Users\Rebaone97898\source\repos\Day3P1\obj\Debug\net8.0\Day3P1.AssemblyInfo.cs
+C:\Users\Rebaone97898\source\repos\Day3P1\obj\Debug\net8.0\Day3P1.csproj.CoreCompileInputs.cache
+C:\Users\Rebaone97898\source\repos\Day3P1\obj\Debug\net8.0\Day3P1.dll
+C:\Users\Rebaone97898\source\repos\Day3P1\obj\Debug\net8.0\refint\Day3P1.dll
+C:\Users\Rebaone97898\source\repos\Day3P1\obj\Debug\net8.0\Day3P1.pdb
+C:\Users\Rebaone97898\source\repos\Day3P1\obj\Debug\net8.0\Day3P1.genruntimeconfig.cache
+C:\Users\Rebaone97898\source\repos\Day3P1\obj\Debug\net8.0\ref\Day3P1.dll
