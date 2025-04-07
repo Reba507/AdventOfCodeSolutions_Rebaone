@@ -1,0 +1,61 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+
+class ReactorSafety
+{
+    static void Main()
+    {
+        string filePath = "input1.txt"; // Change if using a different input file
+        int safeReportCount = 0;
+
+        foreach (var line in File.ReadLines(filePath))
+        {
+            if (string.IsNullOrWhiteSpace(line)) continue;
+
+            var levels = line.Split(new[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries)
+                             .Select(int.Parse).ToList();
+
+            if (IsSafeReport(levels))
+            {
+                safeReportCount++;
+            }
+        }
+
+        Console.WriteLine("Number of safe reports: " + safeReportCount);
+    }
+
+    // Check if a report is safe
+    static bool IsSafeReport(List<int> levels)
+    {
+        if (levels.Count < 2)
+            return false; // Not enough data to judge
+
+        bool isIncreasing = levels[1] > levels[0];
+        bool isDecreasing = levels[1] < levels[0];
+
+        if (!isIncreasing && !isDecreasing)
+            return false; // If first two elements are equal, it's invalid
+
+        for (int i = 1; i < levels.Count; i++)
+        {
+            int diff = levels[i] - levels[i - 1];
+
+            // Rule: adjacent difference must be between 1 and 3
+            if (Math.Abs(diff) < 1 || Math.Abs(diff) > 3)
+                return false;
+
+            // Rule: all must be strictly increasing or decreasing
+            if (isIncreasing && diff <= 0)
+                return false;
+            if (isDecreasing && diff >= 0)
+                return false;
+        }
+
+        return true;
+    }
+}
+
+
+
