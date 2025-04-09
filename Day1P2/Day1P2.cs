@@ -12,7 +12,7 @@ class HistorianSimilarity
         List<int> leftList = new List<int>();
         List<int> rightList = new List<int>();
 
-        // Read the input and fill both lists
+        // Read the file and fill both lists using a foreach loop
         foreach (var line in File.ReadLines(filePath))
         {
             if (string.IsNullOrWhiteSpace(line)) continue;
@@ -24,7 +24,7 @@ class HistorianSimilarity
             rightList.Add(int.Parse(parts[1]));
         }
 
-        // Build a dictionary to count occurrences in the right list
+        // Create a dictionary to count occurrences or similarities in the right list
         var rightCountMap = new Dictionary<int, int>();
         foreach (int number in rightList)
         {
@@ -44,6 +44,6 @@ class HistorianSimilarity
             }
         }
 
-        Console.WriteLine("Similarity score between lists: " + similarityScore);
+        Console.WriteLine("Similarity score between lists = " + similarityScore);
     }
 }
