@@ -66,6 +66,6 @@ class Program
             }
         }
 
-        Console.WriteLine($"Total occurrences of 'XMAS': {count}");
+        Console.WriteLine($"Occurrences of 'XMAS' = {count}");
     }
 }
