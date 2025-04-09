@@ -10,19 +10,18 @@ class Program
         string filePath = "input.txt";
         string input = File.ReadAllText(filePath);
 
-        // Regex pattern to match only valid mul(X,Y) instructions
-        // Explanation:
-        // - Starts with "mul("
-        // - Then 1 to 3 digits
-        // - A comma
-        // - Then 1 to 3 digits
-        // - Ends with ")"
-        // - No whitespace, symbols, or invalid characters allowed
+        //Regex pattern to match only valid mul(X,Y) 
+        //Starts with "mul("
+        //Then 1 to 3 digits
+        // A comma
+        //Then 1 to 3 digits
+        //Ends with ")"
+        //No whitespace, symbols, or invalid characters allowed
         string pattern = @"mul\((\d{1,3}),(\d{1,3})\)";
 
         int total = 0;
 
-        // Match all valid mul instructions
+        // Use Regex to match all valid instructions
         MatchCollection matches = Regex.Matches(input, pattern);
 
         foreach (Match match in matches)
@@ -36,7 +35,7 @@ class Program
             total += product;
         }
 
-        // Output the final result
-        Console.WriteLine("Sum of all valid multiplications: " + total);
+        // Display the result
+        Console.WriteLine("Sum of all valid multiplications = " + total);
     }
 }
