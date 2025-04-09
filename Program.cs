@@ -7,7 +7,7 @@ class HistorianPuzzle
 {
     static void Main()
     {
-        // File path to the input file (update path as needed)
+        // File path to the input file
         string filePath = "input1.txt";
 
         // Lists to hold the left and right column values
@@ -17,18 +17,19 @@ class HistorianPuzzle
         // Read each line from the input file
         foreach (var line in File.ReadLines(filePath))
         {
-            if (string.IsNullOrWhiteSpace(line)) continue; // Skip empty lines
+            // Skip the empty lines
 
+            if (string.IsNullOrWhiteSpace(line)) continue; 
             // Split line into two parts by whitespace
             var parts = line.Split(new[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
-            if (parts.Length != 2) continue; // Skip malformed lines
+            if (parts.Length != 2) continue; 
 
-            // Parse values and add to respective lists
+            // Parse values and add to the created lists
             leftList.Add(int.Parse(parts[0]));
             rightList.Add(int.Parse(parts[1]));
         }
 
-        // Sort both lists in ascending order
+        // Sorting both lists in increasing order
         leftList.Sort();
         rightList.Sort();
 
@@ -40,6 +41,6 @@ class HistorianPuzzle
         }
 
         // Output the result
-        Console.WriteLine("Total distance between lists: " + totalDistance);
+        Console.WriteLine(" Distance between lists =  " + totalDistance);
     }
 }
