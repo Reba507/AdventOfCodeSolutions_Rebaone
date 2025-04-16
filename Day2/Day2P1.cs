@@ -40,9 +40,12 @@ class ReactorSafety
 
         for (int i = 1; i < levels.Count; i++)
         {
+
+//Calculates the difference from the previous number
             int diff = levels[i] - levels[i - 1];
 
-            // Rule: adjacent difference must be between 1 and 3
+            // Rule: adjacent difference must be between 1 and 3, if the trend breaks, it's not a valid sequence.
+
             if (Math.Abs(diff) < 1 || Math.Abs(diff) > 3)
                 return false;
 
