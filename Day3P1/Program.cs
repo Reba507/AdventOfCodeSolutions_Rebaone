@@ -15,7 +15,6 @@ class Program
         //Then 1 to 3 digits
         // A comma
         //Then 1 to 3 digits
-        //Ends with ")"
         //No whitespace, symbols, or invalid characters allowed
         string pattern = @"mul\((\d{1,3}),(\d{1,3})\)";
 
