@@ -7,7 +7,7 @@ class ReactorSafetyWithDampener
 {
     static void Main()
     {
-        string filePath = "input1.txt"; // Update path if needed
+        string filePath = "input1.txt"; 
         int safeReportCount = 0;
 
         foreach (var line in File.ReadLines(filePath))
@@ -59,6 +59,7 @@ class ReactorSafetyWithDampener
     {
         for (int i = 0; i < levels.Count; i++)
         {
+   // Removes the i-th item
             var modified = levels.Where((_, idx) => idx != i).ToList();
             if (IsSafeReport(modified))
                 return true;
