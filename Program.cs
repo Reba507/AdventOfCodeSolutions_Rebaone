@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -7,40 +7,23 @@ class HistorianPuzzle
 {
     static void Main()
     {
-        // File path to the input file
         string filePath = "input1.txt";
 
-        // Lists to hold the left and right column values
-        List<int> leftList = new List<int>();
-        List<int> rightList = new List<int>();
+        // Read and parse lines using LINQ
+        var pairs = File.ReadLines(filePath)
+                        .Where(line => !string.IsNullOrWhiteSpace(line))
+                        .Select(line => line.Split(new[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries))
+                        .Where(parts => parts.Length == 2)
+                        .Select(parts => (Left: int.Parse(parts[0]), Right: int.Parse(parts[1])))
+                        .ToList();
 
-        // Read each line from the input file
-        foreach (var line in File.ReadLines(filePath))
-        {
-            // Skip the empty lines
+// Extract and sort left/right lists using LINQ
+        var leftList = pairs.Select(p => p.Left).OrderBy(x => x).ToList();
+        var rightList = pairs.Select(p => p.Right).OrderBy(x => x).ToList();
 
-            if (string.IsNullOrWhiteSpace(line)) continue; 
-            // Split line into two parts by whitespace
-            var parts = line.Split(new[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
-            if (parts.Length != 2) continue; 
+        // Use LINQ to zip, compute differences, and sum
+        int totalDistance = leftList.Zip(rightList, (l, r) => Math.Abs(l - r)).Sum();
 
-            // Parse values and add to the created lists
-            leftList.Add(int.Parse(parts[0]));
-            rightList.Add(int.Parse(parts[1]));
-        }
-
-        // Sorting both lists in increasing order
-        leftList.Sort();
-        rightList.Sort();
-
-        // Calculate the total distance between paired elements
-        int totalDistance = 0;
-        for (int i = 0; i < leftList.Count; i++)
-        {
-            totalDistance += Math.Abs(leftList[i] - rightList[i]);
-        }
-
-        // Output the result
-        Console.WriteLine(" Distance between lists =  " + totalDistance);
+        Console.WriteLine("Distance between lists = " + totalDistance);
     }
 }
