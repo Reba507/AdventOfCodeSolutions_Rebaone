@@ -3,11 +3,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
+//Rules:
+
+//1.The entire sequence must be strictly increasing or strictly decreasing.
+
+
+//2. Each step (difference between adjacent numbers) must be between 1 and 3.
+
 class ReactorSafety
 {
     static void Main()
     {
-        string filePath = "input1.txt"; // Change if using a different input file
+        string filePath = "input1.txt"; 
         int safeReportCount = 0;
 
         foreach (var line in File.ReadLines(filePath))
