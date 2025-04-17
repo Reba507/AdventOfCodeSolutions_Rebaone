@@ -16,6 +16,9 @@ class Program
                 grid[i, j] = lines[i][j];
             }
         }
+    
+     //Gets the number of rows and columns in      the grid
+
 
         int rows = grid.GetLength(0);
         int cols = grid.GetLength(1);
@@ -34,7 +37,7 @@ class Program
         {
             for (int j = 0; j < cols; j++)
             {
-                // Check all 8 possible directions
+                // Check all 8 possible directions with my direction arrays
                 for (int dir = 0; dir < 8; dir++)
                 {
                     bool match = true;
