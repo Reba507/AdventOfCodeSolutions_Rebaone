@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
+//rules:
+//1. A report must pass the original safety rules
+//2. It can be turned into a safe report by removing exactly one level
+
 class ReactorSafetyWithDampener
 {
     static void Main()
