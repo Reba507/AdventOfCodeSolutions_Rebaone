@@ -9,7 +9,7 @@ class HistorianPuzzle
     {
         string filePath = "input1.txt";
 
-        // Read and parse lines using LINQ
+        // Read and parse lines from the input file
         var pairs = File.ReadLines(filePath)
                         .Where(line => !string.IsNullOrWhiteSpace(line))
                         .Select(line => line.Split(new[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries))
@@ -17,12 +17,12 @@ class HistorianPuzzle
                         .Select(parts => (Left: int.Parse(parts[0]), Right: int.Parse(parts[1])))
                         .ToList();
 
-// Extract and sort left/right lists using LINQ
+// Extract and sort left/right lists
         var leftList = pairs.Select(p => p.Left).OrderBy(x => x).ToList();
         var rightList = pairs.Select(p => p.Right).OrderBy(x => x).ToList();
 
         // Use LINQ to zip, compute differences, and sum
-        int totalDistance = leftList.Zip(rightList, (l, r) => Math.Abs(l - r)).Sum();
+        int totalDistance = leftList.Zip(rightList, (l, -r) => Math.Abs(l - r)).Sum();
 
         Console.WriteLine("Distance between lists = " + totalDistance);
     }
